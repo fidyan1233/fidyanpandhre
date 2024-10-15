@@ -5,6 +5,13 @@
 }
 
 /* nav css  */
+.sticky-header{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    width: 100%;
+}
 nav .logo-bar a{
     /* font-size: 20px; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -41,11 +48,15 @@ nav .logo-bar .togglebutton {
 /* mobile nav css */
 .mobile-nav{
 display: flex;
-padding: 100px 0px;
+position: fixed;
+padding: 40px 0px;
 justify-content: center;
-height: 100vh;
+height: 100%;
+width: 100vw;
 background-color: #000;
 display: none;
+z-index: 1000;
+overflow: hidden;
 }
 
 .mobile-nav ul li{
@@ -136,6 +147,127 @@ display: none;
 }
 /* hero banner  */
 .hero_banner{
-    height: 60vh;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,100,0,1) 74%);
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(2,2,35,1) 0%, rgba(0,100,0,1) 100%);
+    display: flex;
+    /* justify-content: center; */
+    padding: 100px;
+    /* padding: 100px 10px !important; */
+    align-items: center;
 }
+.hero_content h1{
+    font-size: 150px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* text-align: center; */
+    color: #fff;
+}
+.hero_content h3{
+    font-size: 2.5em;
+}
+.hero_content{
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* text-align: center; */
+
+}
+.hero_content span{
+    font-size:20px;
+}
+
+.hero_content p{
+    color: #fff;
+    /* text-align: center; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+
+}
+@media (max-width:900px) {
+    .hero_banner{
+        align-items: start;
+        padding: 100px 20px;
+        height: 100%;
+    }
+    .hero_content{
+        text-align: start;
+    }
+    .hero_content h1{
+        font-size: 4em;
+        margin-bottom: 40px !important;
+        line-height: 60px;
+        /* margin: 0; */
+        text-align: start;
+    }
+    .hero_content p{
+        text-align: left;
+        font-size: 20px;
+        text-transform: lowercase;
+        margin-bottom: 20px;
+    }
+
+    
+}
+.animated-text{
+    font-size: 20px;
+    font-weight: 600;
+    min-width: 280px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .animated-text span{
+    position: relative;
+  }
+  .animated-text span::before{
+    content: "Youtuber";
+    color: hsl(120, 100%, 80%);
+    animation: words 20s infinite;
+  }
+  .animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 110%; 
+    display: none;
+    /* background: hsl(120, 100%, 70%);
+    opacity: 0.9; */
+    /* filter: blur(2px); */
+
+    border-left: 2px solid #fff;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+  }
+  @keyframes cursor {
+    to{
+        border-left: 2px solid ;
+    }
+  }
+  @keyframes words {
+    0%,20%{
+        content: "Custom Website";
+    }
+    21%,40%{
+        content: "Ecommerce Website";
+    }
+    41%,60%{
+        content: "Lead Generation";
+    }
+    61%,80%{
+        content: "Search Engine Optimization";
+    }
+    81%,100%{
+        content: "Logo Design";
+    }
+  }
+  @keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+  }
+  @media (maxwidth:767px) {
+    .animated-text{
+      font-size: 16px !important;
+    }
+    
+  }
